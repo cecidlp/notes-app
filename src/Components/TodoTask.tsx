@@ -1,15 +1,13 @@
-import React from 'react'
-import { ITask } from '../context/GlobalContextProvider'
+import { ITask } from "../context/GlobalContextProvider";
 
 interface Props {
   task: ITask;
   onComplete: () => void;
-
 }
 
 const TodoTask = ({ task, onComplete }: Props) => {
   return (
-    <div className='task-container'>
+    <div className="task-container">
       <div>
         <h2>Task:</h2>
         <p>{task.taskName}</p>
@@ -17,9 +15,11 @@ const TodoTask = ({ task, onComplete }: Props) => {
         <p>{task.deadline}</p>
       </div>
 
-      <button className='delete-button' onClick={onComplete}>Delete</button>
+      <button className="delete-button" onClick={onComplete}>
+        Delete
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default TodoTask
+export default TodoTask;

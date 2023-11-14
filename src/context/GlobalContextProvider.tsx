@@ -1,5 +1,13 @@
-import React, { useState, useContext, createContext, ChangeEvent, ReactNode,  Dispatch, SetStateAction } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {
+  useState,
+  useContext,
+  createContext,
+  ChangeEvent,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+} from "react";
+import { useNavigate } from "react-router-dom";
 
 export interface ITask {
   taskName: string;
@@ -21,7 +29,9 @@ interface IGlobalContextProviderProps {
 
 const GlobalContext = createContext<IGlobalContext | undefined>(undefined);
 
-export const GlobalContextProvider = ({ children }: IGlobalContextProviderProps) => {
+export const GlobalContextProvider = ({
+  children,
+}: IGlobalContextProviderProps) => {
   const navigate = useNavigate();
 
   const [task, setTask] = useState<string>("");
@@ -29,18 +39,12 @@ export const GlobalContextProvider = ({ children }: IGlobalContextProviderProps)
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.name === 'task') {
+    if (e.target.name === "task") {
       setTask(e.target.value);
     } else {
       setDeadline(Number(e.target.value));
     }
   };
-
-  const completeTask = (taskNameToDelete: string): void => {
-    setTodoList(todoList.filter((task) => {
-        return task.taskName != taskNameToDelete
-    }))
-} 
 
   const addTask = (): void => {
     const newTask = { taskName: task, deadline: deadline };
@@ -52,10 +56,12 @@ export const GlobalContextProvider = ({ children }: IGlobalContextProviderProps)
   };
 
   return (
-    <GlobalContext.Provider value={{ handleChange, addTask, task, deadline, todoList, setTodoList }}>
+    <GlobalContext.Provider
+      value={{ handleChange, addTask, task, deadline, todoList, setTodoList }}
+    >
       {children}
     </GlobalContext.Provider>
   );
 };
 
-export const useGlobalContext = () => useContext(GlobalContext)
+export const useGlobalContext = () => useContext(GlobalContext);

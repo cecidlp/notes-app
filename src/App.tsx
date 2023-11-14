@@ -1,15 +1,13 @@
-import React, { FC, useState, ChangeEvent } from 'react'
-import "./index.css"
-import TodoTask from './Components/TodoTask';
-import Home from '../src/Components/Home'
-import RouterPage from './router/RouterPage';
+import { FC } from "react";
+import "./index.css";
+import RouterPage from "./router/RouterPage";
 
 const App: FC = () => {
   return (
     <div>
-      <RouterPage/>
+      <RouterPage />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
