@@ -1,4 +1,4 @@
-import { ITask } from "../context/GlobalContextProvider";
+import { ITask } from "../../context/GlobalContextProvider";
 
 interface Props {
   task: ITask;

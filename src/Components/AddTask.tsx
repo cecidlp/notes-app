@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "../index.css";
-import { useGlobalContext } from "../context/GlobalContextProvider";
+import { useGlobalContext } from "../../context/GlobalContextProvider";
 
 const AddTask: FC = () => {
   const context = useGlobalContext();

@@ -1,6 +1,6 @@
 import TodoTask from "./TodoTask";
-import { useGlobalContext } from "../context/GlobalContextProvider";
-import { ITask } from "../context/GlobalContextProvider";
+import { useGlobalContext } from "../../context/GlobalContextProvider";
+import { ITask } from "../../context/GlobalContextProvider";
 import { Link } from "react-router-dom";
 
 const Home = () => {
